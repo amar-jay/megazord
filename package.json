@@ -1,0 +1,53 @@
+{
+  "name": "komrade",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": ".",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "workspaces": [
+    "site",
+    "app",
+    "desktop",
+    "server",
+    "packages/*"
+  ],
+  "description": "An all in one app",
+  "scripts": {
+    "format": "prettier --write  \"**/*.{ts,tsx,md}\"",
+    "fix:code": "yarn test:code --fix",
+    "fix:other": "yarn prettier --write",
+    "fix": "yarn fix:other && yarn fix:code",
+    "lint-staged": "12.3.7",
+    "prepare": "husky install",
+    "prettier": "prettier \"**/*.{css,scss,json,md,html,yml}\" --ignore-path=.eslintignore",
+    "test:all": "yarn test:typecheck && yarn test:code && yarn test:other",
+    "test:code": "eslint --max-warnings=0 --ext .js,.ts,.tsx .",
+    "test:typecheck": "tsc",
+    "test": "echo \"SetUp Tests\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/amar-jay/komrade"
+  },
+  "keywords": [
+    "komrade",
+    "nextjs",
+    "react-native",
+    "golang"
+  ],
+  "author": "amar-jay",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  }
+}

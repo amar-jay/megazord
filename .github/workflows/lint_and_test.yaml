@@ -1,0 +1,19 @@
+name: global:lint_and_test
+
+on: [push]
+
+jobs:
+  test:
+    name: lint-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: yarn install
+      - run: cd web-and-app && yarn build
+      - run:  cd web-and-app && yarn lint
+      - run: cd web-and-app && yarn test
+        id: test
