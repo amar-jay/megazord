@@ -13,7 +13,6 @@ jobs:
         with:
           node-version: 16
       - run: yarn install
-      - run: cd web-and-app && yarn build
-      - run:  cd web-and-app && yarn lint
-      - run: cd web-and-app && yarn test
+      - run: yarn run fix
+      - run: yarn run test:all
         id: test

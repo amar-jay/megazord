@@ -22,8 +22,8 @@
     "lint-staged": "12.3.7",
     "prepare": "husky install",
     "prettier": "prettier \"**/*.{css,scss,json,md,html,yml}\" --ignore-path=.eslintignore",
-    "test:all": "yarn test:typecheck && yarn test:code && yarn test:other",
-    "test:code": "eslint --max-warnings=0 --ext .js,.ts,.tsx .",
+    "test:all": "yarn test:typecheck && yarn test:code",
+    "test:code": "eslint --max-warnings=2 --ext .js,.ts,.tsx .",
     "test:typecheck": "tsc",
     "test": "echo \"SetUp Tests\" && exit 1"
   },
