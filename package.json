@@ -16,6 +16,10 @@
   ],
   "description": "The app of the future",
   "scripts": {
+    "site:dev": "pnpm --filter site dev",
+    "site:build": "pnpm --filter site build",
+    "site:start": "pnpm --filter site start",
+    "site:lint": "pnpm --filter site lint",
     "prettify": "prettier --write  \"**/*.{ts,tsx,md}\"",
     "lint": "yarn prettify && yarn eslint",
     "lint-staged": "12.3.7",
