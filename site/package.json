@@ -1,10 +1,9 @@
 {
-  "name": "site",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@komrade/site",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn next dev",
+    "build": "yarn next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write src",

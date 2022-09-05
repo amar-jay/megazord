@@ -2,30 +2,29 @@
   "name": "komrade",
   "version": "0.0.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "site",
   "engines": {
     "node": ">=14.0.0"
   },
   "workspaces": [
     "site",
     "app",
+    "@komrade/blog",
     "desktop",
-    "server",
+    "@komrade/server",
     "packages/*"
   ],
-  "description": "An all in one app",
+  "description": "The app of the future",
   "scripts": {
-    "format": "prettier --write  \"**/*.{ts,tsx,md}\"",
-    "fix:code": "yarn test:code --fix",
-    "fix:other": "yarn prettier --write",
-    "fix": "yarn fix:other && yarn fix:code",
+    "prettify": "prettier --write  \"**/*.{ts,tsx,md}\"",
+    "lint": "yarn prettify && yarn eslint",
     "lint-staged": "12.3.7",
     "prepare": "husky install",
     "prettier": "prettier \"**/*.{css,scss,json,md,html,yml}\" --ignore-path=.eslintignore",
-    "test:all": "yarn test:typecheck && yarn test:code",
-    "test:code": "eslint --max-warnings=2 --ext .js,.ts,.tsx .",
-    "test:typecheck": "tsc",
-    "test": "echo \"SetUp Tests\" && exit 1"
+    "test": "yarn tsc && yarn lint",
+    "eslint": "eslint --max-warnings=2 --ext .js,.ts,.tsx . --fix",
+    "tsc": "tsc",
+    "unittest": "echo \"SetUp Tests\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -35,7 +34,7 @@
     "komrade",
     "nextjs",
     "react-native",
-    "golang"
+    "blog"
   ],
   "author": "amar-jay",
   "license": "ISC",
@@ -49,5 +48,9 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
-  }
+  },
+  "dependencies": {
+    "jotai": "^1.8.2"
+  },
+  "packageManager": "yarn@1.22.1"
 }
