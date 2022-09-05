@@ -27,7 +27,7 @@ const Home: NextPage = () => {
       </main>
 
       <footer className="footer">
-        The RoadMap from 2/9/2020 - 1/1/2024
+        The RoadMap from 2/9/2020 - 1/1/2024 <span className="pr-6 cursor-pointer"><a href="https://blog.komrade.themanan.me" className="text-secondary-washed-out decoration-none">Our Blog</a></span>
       </footer>
     </div>
   )
