@@ -16,6 +16,9 @@
   ],
   "description": "The app of the future",
   "scripts": {
+    "blog:dev": "pnpm --filter blog dev",
+    "blog:build": "pnpm --filter blog build",
+    "blog:deploy": "pnpm --filter blog deploy",
     "site:dev": "pnpm --filter site dev",
     "site:build": "pnpm --filter site build",
     "site:start": "pnpm --filter site start",
